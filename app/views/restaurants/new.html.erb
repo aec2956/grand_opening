@@ -1,0 +1,22 @@
+<%= form_for @restaurant do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= f.label :address %>
+  <%= f.text_field :address%>
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+  <%= f.label :state %>
+  <%= f.text_field :state %>
+  <%= f.label :zipcode %>
+  <%= f.text_field :zipcode %>
+  <%= f.label :telephone %>
+  <%= f.text_field :telephone %>
+  <%= f.label :hours %>
+  <%= f.text_field :hours %>
+  <%= f.label :opening %>
+  <%= f.text_field :opening %>
+  <%= f.submit %>
+  <% end %>
+

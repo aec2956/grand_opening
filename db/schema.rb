@@ -15,10 +15,6 @@ ActiveRecord::Schema.define(version: 2020_03_25_171016) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "opening", force: :cascade do |t|
-    t.string "date"
-  end
-
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -28,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_03_25_171016) do
     t.string "zipcode"
     t.string "telephone"
     t.string "hours"
+    t.string "opening"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,2 +1,0 @@
-class Openings < ApplicationController 
-end
