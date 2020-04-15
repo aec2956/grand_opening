@@ -1,11 +1,15 @@
 <div class="booyah-box col-10 offset-1">
 
-<h1>Edit Your Location</h1>
-<%= simple_form_for @location do |f| %>
+<h1>Edit Restaurant</h1>
+<%= simple_form_for @restaurant do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
     <%= f.input :address %>
     <%= f.input :city %>
     <%= f.input :state %>
     <%= f.input :zipcode %>
+    <%= f.input :telephone %>
+    <%= f.input :region, collection: @regions, selected: @restaurant.region.id %>
   
     <br />
     <%= f.submit 'Update', class: 'btn btn-primary' %>

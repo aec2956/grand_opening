@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_25_171016) do
+ActiveRecord::Schema.define(version: 2020_04_14_181716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "regions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
@@ -24,7 +30,8 @@ ActiveRecord::Schema.define(version: 2020_03_25_171016) do
     t.string "zipcode"
     t.string "telephone"
     t.string "hours"
-    t.string "opening"
+    t.bigint "region_id"
+    t.index ["region_id"], name: "index_restaurants_on_region_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,4 +46,5 @@ ActiveRecord::Schema.define(version: 2020_03_25_171016) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "restaurants", "regions"
 end

@@ -10,9 +10,6 @@ class NewRestaurants < ActiveRecord::Migration[5.2]
       t.string :zipcode 
       t.string :telephone 
       t.string :hours
-      t.string :opening_day
-      t.string :opening_month
-      t.string :opening_year
     end 
 
   end
